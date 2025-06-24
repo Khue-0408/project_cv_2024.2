@@ -1,0 +1,11 @@
+torch==2.0.0
+torchvision
+einops
+wandb
+tqdm
+numpy
+scikit-learn
+tensorboard
+timm
+pytorch_revgrad
+cupy

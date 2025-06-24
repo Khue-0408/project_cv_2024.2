@@ -1,0 +1,31 @@
+# Parameters
+project: "runs/pretrainv2"
+snapshot_dir: "${PRETRAINED_MODELS}/weight"
+log_dir: "log"
+resume_checkpoint: "${MAE_PRETRAINED_PATH}/mae_pretrain_vit_base.pth"  # path to checkpoint if you want to resume training
+warmup_epochs: 1
+epochs: 100
+save_period: 5
+visual_imgs: 5
+save_ckpt_freq: 10
+
+hyp:
+  min_lr: 1.0e-8
+  base_lr: 1.0e-4
+  weight_decay: 0.05
+  gradient_accumulation_steps: 1
+
+Model:
+  name: "mae_vit_base_patch16_with_register"
+
+Dataset:
+  prefix_path: "${DATASET_ROOT}"
+  data_name: "Endoscopy"
+  annotation_file: "${DATASET_ROOT}/endoscopy/pretrain.json"
+  img_size: 224
+  batch_size: ${BATCH_SIZE:-256}
+  num_workers: ${NUM_WORKERS:-24}
+  pin_memory: True
+  drop_last: True
+  mean: [0.467, 0.316, 0.254]
+  std: [0.291, 0.226, 0.193]
