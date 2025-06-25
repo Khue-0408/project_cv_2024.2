@@ -138,6 +138,3 @@ bash train_multitask.sh
    - MAE (Masked Autoencoder) for self-supervised pre-training
    - RaBiFPN (Rapid and Balanced Feature Pyramid Network) for efficient feature fusion
    - Multi-task learning capabilities for improved segmentation
-
-## Citation
-If you use this code for your research, please cite our papers [Add citations here]
